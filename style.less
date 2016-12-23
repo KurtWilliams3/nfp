@@ -6,11 +6,36 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Josefin Sans', sans-serif;
+    margin: 0 auto;
+    padding: 0;
 }
 
+#container {
+    height: 100%;
+    width: 100%;
+}
 
+#topmenu {
+    color: white;
+    width: 100%;
+    > .fa {
+        position: absolute;
+        text-align: center;
+        font-size: 4em;
+        top: 1%;
+    }
+    > .fa-cogs {
+        left: 91%;
+    }
+    > .fa-user {
+        left: 2%;
+    }
+    > .fa-trophy {
+        left: 50%;
+    }
+}
 
-#header{
+#header {
     padding: 80px 50px;
     > p {
         &#ejaCounter {
@@ -38,11 +63,19 @@ body {
             }
         }
     }
+    > .fa-ravelry {
+        position: absolute;
+        left: 30%;
+        top: 35%;
+        text-align: center;
+        font-size: 15em;
+        color: white;
+    }
 
 }
 
 #menu {
-    margin: 240px 0px 0px 0px;
+    margin: 350px 0px 0px 0px;
     > ul {
         > li {
             list-style: none;
@@ -51,6 +84,20 @@ body {
             font-weight: 600;
             margin-top: 10px;
             padding-left: 10px;
+            > a {
+                text-decoration: none;
+                color: white;
+                > .fa {
+                    font-size: 1.6em;
+                    width: 80px;
+                    margin: 0px 40px 0px 0px;
+                    text-align: center;
+                    &.fa-ravelry {
+                        margin-left: -10px;
+                        margin-right: 50px;
+                    }
+                }
+            }
             > .fa {
                 font-size: 1.6em;
                 width: 80px;
@@ -61,7 +108,193 @@ body {
                     margin-right: 50px;
                 }
             }
+
         }
     }
 
+}
+
+#streak {
+    position: absolute;
+    width: 100%;
+    display: block;
+    margin-top: 150px;
+    text-align: center;
+    font-size: 4em;
+    font-weight: 600;
+    color: white;
+    > #streakNumber {
+        position: relative;
+        top: -50px;
+        left: 7px;
+        border: 1px solid #ffd651;
+        background: #ffd651;
+        border-radius: 100%;
+        padding: 0px 55px;
+        font-size: 3em;
+    }
+    > #streakFirst, #streakSecond {
+        position: relative;
+        border-top: 4px solid #ffd651;
+        border-bottom: 4px solid #ffd651;
+        padding: 3px 5px;
+        vertical-align:middle;
+    }
+    > #streakFirst {
+        top: -100px;
+        left: 15px;
+        text-align: left;
+        padding-right: 80px;
+    }
+    > #streakSecond {
+        top: -100px;
+        right: 0px;
+        text-align: right;
+        padding-left: 80px;
+    }
+}
+
+//Calendar markup
+
+#calendar {
+    margin: 365px 0 0 0;
+    float: left;
+}
+ul {list-style-type: none;}
+
+/* Month header */
+.month {
+    padding: 10px 25px;
+    width: 100%;
+    background-color: #333;
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+
+}
+
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+    float: right;
+    padding-top: 10px;
+    padding-right: 30px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#333;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #ddd;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #333;
+    margin: 0;
+}
+/* Highlight the "current" day */
+.days {
+    > li {
+        list-style-type: none;
+        display: inline-block;
+        width: 13.6%;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size:2.5em;
+        color:#ddd;
+        &.active {
+            padding: 10px 0;
+            border: 1px #2877ff;
+            border-radius: 4px;
+            background: #2877ff;
+            color: white !important
+        }
+        &.noEja {
+            padding: 10px 0;
+            border: 1px #ffd651;
+            border-radius: 4px;
+            background: #ffd651;
+            color: #333 !important
+        }
+    }
+}
+
+#trackerNotes {
+    margin-top: 11px;
+    margin-left: 5px;
+    width: 100%;
+    height: 490px;
+    float: left;
+
+    > #notes {
+        width: 550px;
+        height: 100%;
+        background: #FFFFA5;
+        box-shadow: 4px 4px 5px #333;
+        margin-right: 5px;
+        overflow: scroll;
+        float: left;
+        > p {
+            margin: 0 0 0 5px;
+            font-size: 3.5em;
+            color: #333;
+            font-weight: 600;
+            &#postit {
+                font-size: 2em;
+                padding: 5px;
+            }
+        }
+    }
+    > #symbols {
+        padding-top: 40px;
+        font-size: 5em;
+        text-align: center;
+        > .fa {
+            margin-top: 20px;
+            border: 1px #333 solid;
+            border-radius: 50%;
+            background-color: #333;
+            width: 100px;
+            height: 100px;
+        }
+        > .fa-bolt {
+            padding-top: 10px;
+            color: #ffd651;
+            text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+        }
+        > .fa-plus-square {
+            padding-top: 20px;
+            color: #c60707;
+        }
+        > .fa-eye {
+            padding-top: 10px;
+            color: #0c4dff;
+        }
+    }
 }
